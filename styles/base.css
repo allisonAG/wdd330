@@ -1,0 +1,169 @@
+:root {
+    --primary-color: #163121;
+    --secondary-color: #936819;
+    --tertiary-color: #F5F1E8;
+
+    --font-heading: "Nunito", sans-serif;
+    --font-body: "Lato", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    text-align: center;
+    padding: 1rem;
+}
+
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--tertiary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*Top Section */
+.top-section {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.branding img {
+    width: 24px;
+    height: auto;
+}
+
+/*¨Navigation*/
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation a:hover {
+    background-color: var(--secondary-color);
+}
+
+.navigation li.current {
+    text-decoration: underline;
+}
+
+/* Search Bar Style */
+
+.search-bar input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.55rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 6px rgba(147, 104, 25, 0.5);
+}
+
+.search-bar button {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.55rem 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: #b1832c;
+}
+
+/* Top Section Mobile */
+@media (max-width: 600px) {
+.top-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+.branding {
+    order: 1;
+}
+
+nav {
+    order: 2;
+}
+
+.search-bar {
+    order: 3;         /* move below branding + nav */
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.search-bar input {
+    width: 90%;
+    max-width: none;
+}
+
+ .welcome {
+     position: static;
+     /* deja de flotar sobre el hero */
+     transform: none;
+     /* elimina el centrado forzado */
+     margin: 1rem auto;
+     /* centrado con margen */
+     padding: 1.5rem;
+     /* padding más cómodo */
+     max-width: 90%;
+     /* ancho amigable */
+     background-color: rgba(255, 255, 255, 0.9);
+     border-radius: 8px;
+     text-align: center;
+ }
+
+ .hero {
+     margin-bottom: 0.5rem;
+     /* pequeño espacio entre hero y welcome */
+ }
+}
+
+
+/* Hero Section*/
+picture img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+
+

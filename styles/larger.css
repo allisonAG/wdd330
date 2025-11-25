@@ -1,0 +1,28 @@
+@media screen and (min-width: 37.5em) {
+
+/* DESKTOP: search stays centered */
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.hero {
+    position: relative;
+
+}
+
+.welcome {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.808);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 600px;
+}
+}
