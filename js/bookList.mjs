@@ -14,7 +14,7 @@ export function bookCardTemplate(book) {
     <img src="${book.cover}" alt="${book.title}">
     <h2>${book.title || "Untitled"}</h2>
     <p>${shortDescription}</p>
-    <a href="/book_pages/index.html?book=${book.id}">See more...</a>
+    <a href="./book_pages/index.html?book=${book.id}">See more...</a>
     </li>
     `; 
 }
