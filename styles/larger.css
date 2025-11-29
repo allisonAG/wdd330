@@ -25,4 +25,26 @@
     text-align: center;
     max-width: 600px;
 }
+
+#bookList, #releasesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    padding: 0;
+}
+
+.book-container {
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.book-cover {
+    width: 30%;
+}
+
+.book-info {
+    width: 70%;
+    padding-left: 1rem;
+}
 }

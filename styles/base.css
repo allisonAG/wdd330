@@ -165,5 +165,86 @@ picture img {
     object-fit: cover;
 }
 
+/* Genre Buttons */
+#genreButtons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    
+
+    button {
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: solid 2px var(--secondary-color);
+        align-self: center;
+        justify-self: center;
+
+        &:hover{
+            background-color: var(--secondary-color);
+            color: var(--tertiary-color);
+        }
+    }
+}
+
+/*Book Cards */
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--tertiary-color);
+    max-width: 320px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.book-card img {
+    display: block;
+    max-width: 180px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.book-card a {
+    color: red;
+}
 
 
+/*Book Details*/
+.book-details {
+    margin: 1rem;
+}
+.book-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.book-cover {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    image-rendering: auto;
+    margin: 0 auto;
+}
+.propose-book {
+    text-align: center;
+}
+.propose-book button {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    margin-top: 2rem;
+    
+        &:hover {
+            background-color: #b1832c;
+        }
+}

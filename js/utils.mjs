@@ -22,3 +22,33 @@ export async function loadHeaderFooter() {
     renderWithTemplate(headerTemplate, headerElement);
     renderWithTemplate(footerTemplate, footerElement);
 }
+
+
+export function renderListWithTemplate(
+    template,
+    parentElement,
+    list,
+    position = "afterbegin",
+    clear = false,
+) {
+    const htmlStrings = list.map(template);
+    // if clear is true we need to clear out the contents of the parent.
+    if (clear) {
+        parentElement.innerHTML = "";
+    }
+    parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+
+export function formatGenre(genre) {
+    return genre
+        .replace(/-/g, " ") //replaces dashes with spaces
+        .replace(/\b\w/g, c => c.toUpperCase()); //Capitalizes every word
+}
+
+
+export function getParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const book = urlParams.get(param);
+    return book;
+}
