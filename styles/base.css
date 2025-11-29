@@ -137,15 +137,10 @@ nav {
 
  .welcome {
      position: static;
-     /* deja de flotar sobre el hero */
      transform: none;
-     /* elimina el centrado forzado */
      margin: 1rem auto;
-     /* centrado con margen */
      padding: 1.5rem;
-     /* padding más cómodo */
      max-width: 90%;
-     /* ancho amigable */
      background-color: rgba(255, 255, 255, 0.9);
      border-radius: 8px;
      text-align: center;
@@ -153,7 +148,6 @@ nav {
 
  .hero {
      margin-bottom: 0.5rem;
-     /* pequeño espacio entre hero y welcome */
  }
 }
 
