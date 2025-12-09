@@ -11,7 +11,7 @@ function proposalsBookTemplate(book) {
     <img src="${book.cover}" alt="${book.title}">
     <h2>${book.title || "Untitled"}</h2>
     <p>${shortDescription}</p>
-    <a href="/book_pages/index.html?book=${book.id}">See more...</a>
+    <a href="/wdd330/book_pages/index.html?book=${book.id}">See more...</a>
     <p class="votes">Votes: ${book.votes || 0}</p>
     <div class="vote-book">
         <button class="vote_book" data-id="${book.id}">Vote</button>
