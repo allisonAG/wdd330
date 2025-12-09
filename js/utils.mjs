@@ -13,8 +13,8 @@ export async function loadTemplate(path) {
 }
 
 export async function loadHeaderFooter(callback) {
-    const headerTemplate = await loadTemplate("WDD330/templates/header.html");
-    const footerTemplate = await loadTemplate("WDD330/templates/footer.html");
+    const headerTemplate = await loadTemplate("/WDD330/templates/header.html");
+    const footerTemplate = await loadTemplate("/WDD330/templates/footer.html");
     
     const headerElement = document.querySelector("#main-header");
     const footerElement = document.querySelector("#main-footer");
