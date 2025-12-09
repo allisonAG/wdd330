@@ -59,6 +59,7 @@ a {
     height: auto;
 }
 
+
 /*¨Navigation*/
 
 .navigation li {
@@ -169,24 +170,24 @@ picture img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 1rem;
-    padding: 1rem;
-    
-
-    button {
-        padding: 0.5rem;
-        border-radius: 8px;
-        border: solid 2px var(--secondary-color);
-        align-self: center;
-        justify-self: center;
-        transition: var(--transition);
-
-        &:hover{
-            background-color: var(--secondary-color);
-            color: var(--tertiary-color);
-            transform: var(--transform);
-        }
-    }
+    padding: 1rem;  
 }
+
+#genreButtons button {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: solid 2px var(--secondary-color);
+    align-self: center;
+    justify-self: center;
+    transition: var(--transition);
+}
+
+#genreButtons button:hover {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    transform: var(--transform);
+}
+
 
 /*Book Cards */
 
@@ -210,12 +211,12 @@ picture img {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-    &:hover {
-        transform: scale(1.03);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    }
-
 }
+
+.book-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+ }
 
 .book-card img {
     display: block;
@@ -229,11 +230,11 @@ picture img {
 .book-card a {
     color: rgb(202, 31, 31);
     padding-top: 1rem ;
+}
 
-    &:hover {
-        color: var(--primary-color);
-        transition: var(--transition);
-    }
+.book-card a:hover {
+    color: var(--primary-color);
+    transition: var(--transition);
 }
 
 
@@ -264,11 +265,11 @@ picture img {
     padding: 0.5rem 1rem;
     margin-top: 2rem;
     transition: var(--transition);
-    
-        &:hover {
-            background-color: var(--secondary-color);
-            color: var(--tertiary-color);
-        }
+}
+
+.propose-book button:hover {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
 }
 
 .button-shake {
@@ -277,13 +278,12 @@ picture img {
 
 /* Remove Buttons*/
 .remove-button {
-    cursor: pointer;
+    cursor: pointer;   
+}
 
-    &:hover {
-        color: var(--primary-color);
-        font-weight: bolder;
-    }
-    
+.remove-button:hover {
+    color: var(--primary-color);
+    font-weight: bolder;
 }
 
 /*Votes */
@@ -299,11 +299,11 @@ picture img {
     padding: 0.5rem 1rem;
     margin-top: 2rem;
     transition: var(--transition);
-    
-    &:hover {
-        background-color: var(--primary-color);
-        color: var(--tertiary-color);
-    }
+}
+
+.vote-book button:hover {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
 }
 
 /* Animations */
