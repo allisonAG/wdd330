@@ -12,7 +12,7 @@ loadHeaderFooter(() => {
             const query = searchInput.value.trim();
 
             if (query) {
-                window.location.href = `/book_search/index.html?query=${encodeURIComponent(query)}`;
+                window.location.href = `/wdd330/book_search/index.html?query=${encodeURIComponent(query)}`;
             }
         });
     }

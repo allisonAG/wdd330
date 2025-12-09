@@ -6,7 +6,7 @@ const genreButtons = document.querySelectorAll("#genreButtons button");
 genreButtons.forEach(btn => {
     btn.addEventListener("click", () => {
         const genre = btn.dataset.genre;
-        window.location.href = `./books/index.html?genre=${genre}`;
+        window.location.href = `/wdd330/books/index.html?genre=${genre}`;
     });
 });
 
