@@ -180,6 +180,7 @@ picture img {
     align-self: center;
     justify-self: center;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 #genreButtons button:hover {
