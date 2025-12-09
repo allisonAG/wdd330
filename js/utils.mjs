@@ -12,15 +12,19 @@ export async function loadTemplate(path) {
     return template;
 }
 
-export async function loadHeaderFooter() {
-    const headerTemplate = await loadTemplate("/wdd330/templates/header.html");
-    const footerTemplate = await loadTemplate("/wdd330/templates/footer.html");
+export async function loadHeaderFooter(callback) {
+    const headerTemplate = await loadTemplate("WDD330/templates/header.html");
+    const footerTemplate = await loadTemplate("WDD330/templates/footer.html");
     
     const headerElement = document.querySelector("#main-header");
     const footerElement = document.querySelector("#main-footer");
     
     renderWithTemplate(headerTemplate, headerElement);
     renderWithTemplate(footerTemplate, footerElement);
+
+    if (callback) {
+        callback();
+    }
 }
 
 
@@ -51,4 +55,27 @@ export function getParam(param) {
     const urlParams = new URLSearchParams(queryString);
     const book = urlParams.get(param);
     return book;
+}
+
+// retrieve data from localstorage
+export function getLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+// save data to local storage
+export function setLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+
+// Active Page
+export function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") && currentPath.endsWith(link.getAttribute("href"))) {
+            link.classList.add("active");
+        }
+    });
 }

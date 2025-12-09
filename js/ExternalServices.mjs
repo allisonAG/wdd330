@@ -35,6 +35,15 @@ export default class ExternalServices {
         return data.items || [];
     }
 
+    // Search by search
+    async searchByText(query) {
+        const url = `${this.googleApi}?q=${encodeURIComponent(query)}&maxResults=40`;
+        const response = await fetch(url);
+        const data = await convertToJson(response);
+
+        return data.items || [];
+    }
+
     // Find book by ID
     async findBookById(id) {
         const url = `${this.googleApi}/${id}`;

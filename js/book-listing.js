@@ -1,4 +1,4 @@
-import { loadHeaderFooter, formatGenre, getParam } from "./utils.mjs";
+import { formatGenre, getParam } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 import BookList from "./bookList.mjs";
 
@@ -15,4 +15,3 @@ const bookList = new BookList(dataSource, listElement)
 
 bookList.init(genre);
 
-loadHeaderFooter();

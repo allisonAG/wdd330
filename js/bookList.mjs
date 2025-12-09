@@ -1,7 +1,7 @@
 import { renderListWithTemplate } from "./utils.mjs";
 
 // Short description
-function truncate(text, limit = 20) {
+export function truncate(text, limit = 20) {
     return text.split(" ").slice(0, limit).join(" ") + "...";
 }
 
@@ -14,7 +14,7 @@ export function bookCardTemplate(book) {
     <img src="${book.cover}" alt="${book.title}">
     <h2>${book.title || "Untitled"}</h2>
     <p>${shortDescription}</p>
-    <a href="/wdd330/book_pages/index.html?book=${book.id}">See more...</a>
+    <a href="/book_pages/index.html?book=${book.id}">See more...</a>
     </li>
     `; 
 }
@@ -42,10 +42,19 @@ export default class BookList {
         books = books.slice(0, 20);
 
         this.books = books;
-        this.renderList(this.books, true);
+        this.renderList(books, true);
     }
 
+    async search(query) {
+        let books = await this.dataSource.searchByText(query);
+        books = this.removeDuplicatesByTitle(books);
 
+        //Limit to 20 results
+        books = books.slice(0, 20);
+
+        this.books = books;
+        this.renderList(books, true);
+    }
 
     async renderList(list, clear = false) {
     // Convert every book in the book list using prepareBookData
@@ -63,7 +72,7 @@ export default class BookList {
         const images = info.imageLinks || {};
 
         //Google Books Data
-        const cover = images.thumbnail || images.smallThumbnail || null;
+        let cover = images.thumbnail || images.smallThumbnail || null;
         
         let description = info.description || null;
 

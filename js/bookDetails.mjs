@@ -1,4 +1,4 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 
 export function bookDetailsTemplate(book) {
     return `
@@ -23,6 +23,18 @@ export function bookDetailsTemplate(book) {
     `; 
 }
 
+function animateProposeButton(btn) {
+    btn.classList.add("button-shake");
+
+    const originalText = btn.textContent;
+    btn.textContent = "Added!";
+
+    setTimeout(() => {
+        btn.classList.remove("button-shake");
+        btn.textContent = originalText;
+    }, 1000);
+}
+
 export default class BookDetails {
     constructor(bookId, dataSource) {
         this.bookId = bookId;
@@ -31,15 +43,33 @@ export default class BookDetails {
     }
 
     async init() {
-        await loadHeaderFooter();
 
         const raw = await this.dataSource.findBookById(this.bookId);
 
         this.book = await this.prepareBookDetailsData(raw);
 
         this.renderBookDetails();
+
+        document.getElementById("proposeBook")
+            .addEventListener("click", (event) => {
+                this.addBookToProposalsList();  
+
+                animateProposeButton(event.currentTarget); 
+            });
     }
 
+    addBookToProposalsList() {
+        const bookProposalsItems = getLocalStorage("so-proposals") || [];
+
+        const bookProposalsItemsIds = bookProposalsItems.map(bookProposalsItem => bookProposalsItem.id);
+
+        if (!bookProposalsItemsIds.includes(this.bookId)) {
+            bookProposalsItems.push(this.book);
+        } 
+        
+        setLocalStorage("so-proposals", bookProposalsItems);
+
+    }
 
     renderBookDetails() {
         const container = document.querySelector("#bookDetails");
